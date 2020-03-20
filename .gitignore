@@ -1,3 +1,7 @@
+# build
+web
+packages/app/modules
+
 # Logs
 logs
 *.log
