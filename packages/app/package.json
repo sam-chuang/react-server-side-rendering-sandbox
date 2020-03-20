@@ -1,0 +1,20 @@
+{
+  "name": "app",
+  "version": "0.0.2",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "build": "",
+    "build:esm": "npx snowpack",
+    "build:js": "babel src --out-dir lib --source-maps"
+  },
+  "dependencies": {
+    "react": "npm:@pika/react@^16.13.1",
+    "react-dom": "npm:@pika/react-dom@^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "snowpack": "^1.6.0"
+  }
+}
