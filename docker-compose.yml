@@ -1,0 +1,11 @@
+version: "3"
+services:
+  dev:
+    image: node:12
+    volumes:
+      - .:/usr/sandbox
+    working_dir: /usr/sandbox
+    command: bash -c "npm install && npm run dev"
+    ports:
+      - 3000:3000
+      - 9229:9229

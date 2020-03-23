@@ -32,4 +32,9 @@ const view = (req, res) => {
   }
 }
 
-router.get("*", view)
+router.get("/*", view)
+
+//TODO
+const singlePageApp = content => `
+
+`

@@ -24,7 +24,7 @@ export const App = () => {
 }
 
 export const app = node => {
-  ReactDOM.render(
+  ReactDOM.hydrate(
     <BrowserRouter>
       <App />
     </BrowserRouter>,
