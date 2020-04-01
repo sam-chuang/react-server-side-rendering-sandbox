@@ -1,3 +1,5 @@
 .vscode
 web
 node_modules
+packages/app/modules
+packages/app/node_modules
