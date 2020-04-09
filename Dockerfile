@@ -1,4 +1,4 @@
-FROM node:12.16.1-alpine AS build
+FROM node:13.12.0-alpine AS build
 
 RUN apk add --update --no-cache \
     python \
@@ -19,7 +19,7 @@ RUN npm run build
 
 RUN npm prune --production
 
-FROM node:12.16.1-alpine
+FROM node:13.12.0-alpine
 
 ENV PORT=3000
 EXPOSE $PORT

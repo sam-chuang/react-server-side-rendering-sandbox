@@ -2,8 +2,8 @@ import { router, server } from "./http"
 import serveStatic from "serve-static"
 import { join, resolve } from "path"
 
-const root = join(__dirname, "../site")
+const serveApp = serveStatic(join(__dirname, "../app"), {})
+router.use(serveApp)
 
-const serve = serveStatic(root, {})
-
-router.use(serve)
+const serveModules = serveStatic(join(__dirname, "../modules"), {})
+router.use(serveModules)

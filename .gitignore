@@ -1,6 +1,6 @@
 # build
 web
-packages/app/modules
+modules
 
 # Logs
 logs

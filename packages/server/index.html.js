@@ -16,7 +16,7 @@ const view = (req, res) => {
 
   if (context.url) {
     res.writeHead(301, {
-      Location: context.url
+      Location: context.url,
     })
     return res.end()
   } else {
@@ -24,7 +24,7 @@ const view = (req, res) => {
         <!doctype html>
         <div id="app">${html}</div>
         <script type="module">
-          import { app } from '/app/index.js'
+          import { app } from '/index.js'
           app(document.getElementById('app'))
         </script>
       `)
@@ -33,8 +33,3 @@ const view = (req, res) => {
 }
 
 router.get("/*", view)
-
-//TODO
-const singlePageApp = content => `
-
-`

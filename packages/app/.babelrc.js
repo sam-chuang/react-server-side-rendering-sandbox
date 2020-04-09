@@ -6,10 +6,10 @@ module.exports = {
     [
       "@babel/preset-env",
       {
-        modules: false
-      }
+        modules: false,
+      },
     ],
-    "@babel/preset-react"
+    "@babel/preset-react",
   ],
-  plugins: [["snowpack/assets/babel-plugin.js", { dir: "modules" }]]
+  plugins: [["snowpack/assets/babel-plugin.js", { dir: "modules" }]],
 }

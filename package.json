@@ -1,19 +1,17 @@
 {
   "name": "react-server-side-rendering-sandbox",
   "version": "0.0.1",
-  "description": "",
   "scripts": {
     "start": "node web/server/index.js",
-    "start:dev:server": "nodemon --nolazy --watch web/server --watch web/app web/server/index.js",
-    "start:debug:dev:server": "nodemon --nolazy --inspect-brk=0.0.0.0:9229 --watch web/server --watch web/app web/server/index.js",
-    "dev": "npm-run-all build:app:js build:server:js build:site start:dev:server",
-    "build": "npm-run-all --parallel build:app:js build:server:js build:site",
-    "build:site": "cd packages/app && npm ci && npm run build",
-    "build:site:watch": "cd packages/app && npm run build:watch",
-    "build:app:js": "babel packages/app/src --out-dir web/app --source-maps",
-    "build:app:js:watch": "babel packages/app/src --out-dir web/app --source-maps --watch",
-    "build:server:js": "babel packages/server --out-dir web/server --source-maps",
-    "build:server:js:watch": "babel packages/server --out-dir web/server --source-maps --watch"
+    "start:dev": "nodemon --nolazy --watch web/server --watch web/app web/server/index.js",
+    "start:debug": "nodemon --nolazy --inspect-brk=0.0.0.0:9229 --watch web/server --watch web/app web/server/index.js",
+    "dev": "npm-run-all build:packages start:dev",
+    "build": "npm-run-all --parallel prepare build:packages",
+    "build:packages": "babel packages --out-dir web --source-maps",
+    "build:packages:watch": "babel packages --out-dir web --source-maps --watch",
+    "prepare": "npm-run-all modules:install modules:copy",
+    "modules:install": "snowpack --config snowpack.config.js",
+    "modules:copy": "copyfiles -a modules/**/* web"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

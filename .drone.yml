@@ -1,8 +1,0 @@
-pipeline:
-  build:
-    image: node:12.16.1
-    commands:
-      - npm install
-      # - npm test
-      - npm run build
-  # deploy:
